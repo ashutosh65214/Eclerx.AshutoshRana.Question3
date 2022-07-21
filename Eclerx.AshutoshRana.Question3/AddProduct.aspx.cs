@@ -37,28 +37,30 @@ namespace Eclerx.AshutoshRana.Question3
 
         protected void BtnInsert_Click(object sender, EventArgs e)
         {
-            using (con = new SqlConnection(ConfigurationManager.ConnectionStrings["Eclerx"].ConnectionString))
+            if (Page.IsValid)
             {
-                using (cmd = new SqlCommand("usp_addItem", con))
+                using (con = new SqlConnection(ConfigurationManager.ConnectionStrings["Eclerx"].ConnectionString))
                 {
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@CategoryName", DdlCategories.SelectedValue);
-                    cmd.Parameters.AddWithValue("@ProductName", txtProductName.Text);
-                    cmd.Parameters.AddWithValue("@Price", txtPrice.Text);
-                    cmd.Parameters.AddWithValue("@TotalQuantity",txtQuantity.Text);
-                    cmd.Parameters.AddWithValue("@AddedDate", DateTime.Today);
-
-                    this.reset();
-
-                    if (con.State != ConnectionState.Open)
+                    using (cmd = new SqlCommand("usp_addItem", con))
                     {
-                        con.Open();
-                    }
-                    cmd.ExecuteNonQuery();
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@CategoryName", DdlCategories.SelectedValue);
+                        cmd.Parameters.AddWithValue("@ProductName", txtProductName.Text);
+                        cmd.Parameters.AddWithValue("@Price", txtPrice.Text);
+                        cmd.Parameters.AddWithValue("@TotalQuantity", txtQuantity.Text);
+                        cmd.Parameters.AddWithValue("@AddedDate", DateTime.Today);
 
+                        this.reset();
+
+                        if (con.State != ConnectionState.Open)
+                        {
+                            con.Open();
+                        }
+                        cmd.ExecuteNonQuery();
+
+                    }
                 }
             }
-
         }
         public void reset()
         {

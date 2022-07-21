@@ -69,6 +69,15 @@ namespace Eclerx.AshutoshRana.Question3
         protected global::System.Web.UI.WebControls.TextBox txtPrice;
 
         /// <summary>
+        /// RvfPrice control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RvfPrice;
+
+        /// <summary>
         /// txtQuantity control.
         /// </summary>
         /// <remarks>
@@ -76,6 +85,15 @@ namespace Eclerx.AshutoshRana.Question3
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtQuantity;
+
+        /// <summary>
+        /// RvfQuantity control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RvfQuantity;
 
         /// <summary>
         /// BtnInsert control.

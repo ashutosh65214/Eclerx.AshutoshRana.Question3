@@ -41,6 +41,7 @@
                     </td>
                     <td>
                         <asp:TextBox ID="txtPrice" runat="server" />
+                        <asp:RegularExpressionValidator Text="*" ID="RvfPrice" ErrorMessage="Please enter price" ControlToValidate="txtPrice" ForeColor="Red" runat="server"></asp:RegularExpressionValidator>
                     </td>
                 </tr>
                 <tr>
@@ -49,6 +50,7 @@
                     </td>
                     <td>
                         <asp:TextBox ID="txtQuantity" runat="server" />
+                        <asp:RegularExpressionValidator Text="*" ID="RvfQuantity" ErrorMessage="Please enter Quantity" ControlToValidate="txtQuantity" ForeColor="Red" runat="server"></asp:RegularExpressionValidator>
                     </td>
                 </tr>
                 <tr>
